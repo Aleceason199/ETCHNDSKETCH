@@ -1,0 +1,15 @@
+.divContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#startDiv{
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#startButton{
+    padding: 10px 10px;
+}
