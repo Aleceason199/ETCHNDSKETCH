@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+    zoom: 100%;
+}
 .divContainer{
     display: flex;
     align-items: center;
@@ -8,7 +12,10 @@
     background-color: bisque;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+}
+#boxes, #boxSize{
+    padding-right: 5%;
 }
 #startButton{
     padding: 10px 10px;

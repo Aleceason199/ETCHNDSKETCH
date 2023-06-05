@@ -6,11 +6,11 @@ divContainer.className = "divContainer"
 body.appendChild(divContainer);
 
 
-const xInput = document.querySelector("#xlength");
-const yInput = document.querySelector("#ylength");
+const boxesInput = document.querySelector("#boxes");
+const boxSizeInput = document.querySelector("#boxSize");
 
 const startButton = document.querySelector("#startButton");
-startButton.addEventListener('click', () => {createSketchPad(xInput.value, yInput.value)});
+startButton.addEventListener('click', () => {createSketchPad(boxesInput.value, boxSizeInput.value)});
 
 
 //changes the div that the person hovered over to the colour black
@@ -20,17 +20,22 @@ function mouseHovered(id){
 }
 
 //creates the sketchpad with the inputed numbers
-function createSketchPad(xLength, yLength){
+function createSketchPad(boxes, boxSize){
 
-    for (var i = 0; i < (xLength*yLength); i++){
+    var etches = divContainer.querySelectorAll("div");
+    etches.forEach((etch) => {
+        etch.remove()
+    });
+
+    for (var i = 0; i < boxes; i++){
         divBox = document.createElement("div");
-        divBox.style.padding = (xLength / 10) + "px " + (yLength / 10) + "px";
+        divBox.style.padding = boxSize + "px " + boxSize + "px";
         divBox.id = "box" + i;
         divBox.className = "box";
         divContainer.append(divBox);
     }
     
-    const etches = divContainer.querySelectorAll("div");
+    var etches = divContainer.querySelectorAll("div");
     
     etches.forEach((etch) => {
         etch.addEventListener('mouseover', () => {mouseHovered(etch.id)});
